@@ -2,8 +2,8 @@ print(f'{" Desafio 95 ":-^40}')
 time = []
 jogador = dict()
 gols = list()
-resp = 's'
 while True:
+    resp = 'a'
     tot = 0
     print('-=' * 20)
     print(f'{"CADASTRE O JOGADDOR":^40}')
@@ -17,7 +17,8 @@ while True:
     jogador['total'] = tot
     gols.clear()
     time.append(jogador.copy())
-    resp = str(input('Quer continuar ? [S/N] ').strip().upper())
+    while resp not in 'sSnN':
+        resp = str(input('Quer continuar ? [S/N] ').strip().upper())
     if resp == 'N':
         break
 print('--' * 20)
@@ -33,8 +34,11 @@ while True:
     elif n >= len(time):
         print(f'O jogador com o codº {n} não foi cadastrado... ')
     else:
-        print(f'O jogador "{time[n]["nome"]}" jogou {time[n]["partidas"]}.')
+        print("--" * 30)
+        print(f'LEVANTAMENTO DO JOGADOR {time[n]["nome"]}...')
+        print(f'O jogador "{time[n]["nome"]}" jogou {time[n]["partidas"]} partidas.')
         for p in range(0, time[n]['partidas']):
             print(f' => Na partida {p}, fez {time[n]["gols"][p]} gols')
         print(f'No total foram {time[n]["total"]} gols')
+    print("--" * 30)
 print(f'<<< FIM DO PROGRAMA >>>')
