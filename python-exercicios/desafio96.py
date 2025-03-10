@@ -1,6 +1,6 @@
 def area(larg, comp):
     a = larg * comp
-    print(f'A area de um terreno de {comp}x{larg}m é {a}m !')
+    print(f'A area de um terreno de {comp}x{larg} é {a}m² !')
 
 
 print(f'{" Desafio 96 ":-^40}')
