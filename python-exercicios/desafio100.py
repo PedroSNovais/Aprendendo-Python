@@ -13,7 +13,7 @@ def sortear(lista):
 
 def somapar(lista):
     soma = 0
-    for n, i in enumerate(lista):
+    for i in lista:
         if i % 2 == 0:
             soma += i
     print(f'A soma dos pares de {lista} é {soma}')
