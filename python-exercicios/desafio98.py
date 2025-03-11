@@ -16,10 +16,11 @@ print('contagem de 1 até 10 de 1 em 1 ')
 contador(1, 10, 1)
 print('Contagem de 10 até 0 de 2 em 2')
 contador(10, 0, 2)
+print('Agora é sua vez de personalizar a contagem !')
 i = int(input('Inicio: '))
 f = int(input('Final: '))
 p = int(input('Passo: '))
-if p == 0:
+if p <= 0:
     p = 1
 if f <= 0:
     f -= 2
