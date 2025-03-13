@@ -25,7 +25,6 @@ def diminuir(n, pc=15):
 
 
 # desafio 108
-def moeda(msg):
-    msg = int(msg)
-    msg = f'R${msg}.00'
+def moeda(msg, moeda='R$'):
+    msg = f'{moeda}{msg:.2f}'.replace('.', ',')
     return msg
