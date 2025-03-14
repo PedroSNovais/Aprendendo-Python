@@ -25,6 +25,6 @@ while True:
         cor('41;30')
         txtlinha('<<<  O PROGRAMA FOI FINALIZADO >>>')
         break
-    cor('1;47;30')
+    cor('7;40')
     help(codigo)
-    cor(0)
+    cor()
