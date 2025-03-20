@@ -4,8 +4,7 @@ def dados():
             nome = str(input('Nome: ').strip().capitalize()).split()
             snome = str(input('Sobrenome: ').strip().capitalize()).split()
             idade = int(input('Idade: '))
-            n = len(snome) - 1
-            return {'nome': nome, 'idade': idade, "lsn": n, 'snome': snome}
+            return {'nome': nome, 'idade': idade, 'snome': snome}
         except (TypeError, ValueError):
             print('\033[1;31mErro! Digite dados validos...\033[m')
 
