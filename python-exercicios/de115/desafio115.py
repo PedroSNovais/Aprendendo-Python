@@ -1,27 +1,22 @@
 from uteis115 import *
 print(f'{" Desafio 115 ":*^40}')
-
-
-# recebendo dados
-pessoas = list()
 while True:
-    p = dados()
-    pessoas.append(p)
-    # continuar ?
-    resp = continuar()
-    if resp == 'N':
+    titulo()
+    print('\033[33m 1 - \033[36mVer pessoas cadastradas \n \033[33m2 - \033[36mCadastrar nova pessoa \n \033[33m3 - '
+          '\033[36mSair do programa\033[m')
+    r = continuar()
+    if r == 1:
+        titulo("PESSOAS CADASTRADAS")
+        arq = open('arquivo.txt', 'r')
+        print(arq.read())
+        arq.close()
+    elif r == 3:
         break
-    else:
-        print("-"*30)
-arq = open('arquivo.txt', 'a')
-for p in pessoas:
-    n1 = list()
-    for c in range(0, 2):
-        n1.append(p['nome'][c])
-        n1.append(' ')
-    i = n1
-    print(i)
-    arq.writelines(i)
-
-arq.close()
+    elif r == 2:
+        p = dados()
+        dado = f'{p["nome"]:<31} {p["idade"]} anos\n'
+        arq = open('arquivo.txt', 'a')
+        arq.writelines(dado)
+        print('\033[1;32mPessoa cadastrada com sucesso !!\033[m')
+        arq.close()
 print('<<<<< Fim do Programa >>>>')
