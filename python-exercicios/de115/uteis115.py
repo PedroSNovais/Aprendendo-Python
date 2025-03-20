@@ -5,6 +5,7 @@ def dados():
             snome = str(input('Sobrenome: ').strip().capitalize()).split()
             idade = int(input('Idade: '))
             return {'nome': nome, 'idade': idade, 'snome': snome}
+
         except (TypeError, ValueError):
             print('\033[1;31mErro! Digite dados validos...\033[m')
 
