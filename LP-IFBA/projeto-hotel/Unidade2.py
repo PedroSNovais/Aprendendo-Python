@@ -1,72 +1,174 @@
-responsavel = str(input("Digite o nome do responsavel pela reserva: ").strip().capitalize())
-if responsavel.isalpha():
-    print(responsavel)
-else:
-    print("Erro. Digite um nome valido !")
-    quit()
+from datetime import datetime
 
-print("-=" * 20)
-diaIn = int(input("Digite o dia do check-in: "))
-mesIn = int(input("Digite o mês do check-in: "))
-anoIn = int(input("Digite o ano do check-in: "))
-print("-=" * 20)
-diaOut = int(input("Digite o dia do check-out: "))
-mesOut = int(input("Digite o mês do check-out: "))
-anoOut = int(input("Digite o ano do check-out: "))
-print("-=" * 20)
 
-# Definindo preços
-tipos = ("Luxo", "Standard", "Premium")
-print(tipos)
-quarto = str(input("Digite o tipo de quarto: ").strip().capitalize())    
-if quarto == tipos[0]:
-    print(tipos[0])
-    valor = int(250)
+valorMedio = maiorReserva = maisCara = somaTotalValores = reservas = resposta = 0
+quartosStandard = 10
+quartosPremium = 5
+quartosLuxo = 3
+responsavelMaiorReserva = responsavelMaisCara = "NINGÉUM"
 
-elif quarto == tipos[1]:
-    print(tipos[1])
-    valor = int(100)
-
-elif quarto == tipos[2]:
-    print(tipos[2])
-    valor = int(180)
-
-else:
-    print("Erro! Digite um tipo de quarto valido")
-    quit()
-
-# Validação dos dados
-if anoOut < anoIn or anoIn // 1000 < 2: # ano de saida maior que de entrada ou ano escrito com menos de 4 digitos
-    print("Erro. Existe incongruencia nas datas: Ano abaixo de 2000!")
-    quit()
-elif (mesIn > 12 or mesOut > 12) or (mesIn < 1 or mesOut < 1): # mais que 12 meses
-    print("Erro. Existe incongruencia nas datas: Meses inexistentes !")
-    quit()
-elif anoIn == anoOut and mesOut < mesIn: # anos iguais
-    print("Erro. Existe incongruencia nas datas !")
-    quit()
-elif anoIn == anoOut and mesIn == mesOut and diaOut < diaIn:
-    print("Erro. Existe incongruencia nas datas !")
-    quit()
-elif 30 < diaIn < 1 or 30 < diaOut < 1:
-    print("Erro. Digite dias validos !")
-    quit()
-elif diaIn == diaOut and mesIn == mesOut and anoIn == anoOut:
-    print("Erro: Você não pode entar e sair no mesmo dia")
-    quit()
+while(resposta != 2):
+    codigo = True
+    cancelar = 2
+    # Sair do programa ?
     
-# calculando dias
-if anoIn == anoOut:
-    diasCorridos = 30*(mesOut - mesIn) + diaOut - diaIn
-elif anoOut == anoIn +1:
-    diasCorridos = 30*(mesOut + (12 - mesIn)) + diaOut - diaIn
-else:
-    diasCorridos = (anoOut * 365 + mesOut * 30 + diaOut) - (anoIn * 365 + mesIn * 30 + diaIn)
+    print("=-" * 30)
+    print("1 - NOVA RESERVA \n2 - SAIR")
+    resposta = (input("Digite o que deseja: "))
+    print("=-" * 30)
+    if not resposta.isnumeric():
+        continue
+    resposta = int(resposta)
+    while(resposta != 2 and resposta !=1):
+        print("=-" * 30)
+        print("Digite um numero valido...")
+        print("1 - NOVA RESERVA \n2 - SAIR")
+        resposta = (input("Digite o que deseja: "))
+        if not resposta.isnumeric():
+            continue
+        resposta = int(resposta)
+
+        if resposta == 2 or resposta == 1:
+            break
+    if resposta == 2:
+        break
     
-valortotal = valor*diasCorridos
-print("--" * 20)
-print(f"Responsavel pela reserva: {responsavel}")
-print(f'Dia de check-in: {diaIn}/{mesIn}/{anoIn}')
-print(f'Dia de check-out: {diaOut}/{mesOut}/{anoOut}')
-print(f'O quarto reservado foi {quarto} por {diasCorridos} dias')
-print(f'O valor total foi de R${valortotal}')
+
+    # Nome do responsavel
+    responsavel = str(input("Digite o nome do responsavel pela reserva: ").strip().capitalize())
+    if not responsavel.isalpha():
+        print("Erro. Digite um nome valido !")
+        print("Está reserva foi descontinuada !")
+        continue
+
+
+    # Definindo datas
+
+    data_chekIn_str = str(input("Digite a data de check in: (dd/mm/aaaa) "))
+    data_chekOut_str = str(input("Digite a data de check out: (dd/mm/aaaa) "))
+
+    try: 
+        data_chekIn = datetime.strptime(data_chekIn_str, "%d/%m/%Y")
+    except ValueError:
+        print("Erro! Data de check in invalida !")
+        print("Está reserva foi descontinuada !")
+        continue
+    try: 
+        data_chekOut = datetime.strptime(data_chekOut_str, "%d/%m/%Y")
+    except ValueError:
+        print("Erro! Data de check out invalida !")
+        print("Está reserva foi descontinuada !")
+        continue
+
+
+    # calculando dias
+    diasReserva = data_chekOut - data_chekIn
+    diasReserva = diasReserva.days
+
+    if diasReserva <= 0:
+        print("Erro! Existe um equivoco nas datas ! ")
+        print("Está reserva foi descontinuada !")
+        continue
+
+
+    # Definindo quartos
+    codigo = True
+    while codigo:
+        tipos = ("Luxo", "Standard", "Premium")
+        print("_-"*20)
+        print(f"    {tipos}")
+
+        cancelar = input("Deseja cancelar essa reserva aqui ? [1-Sim/ 2-Não] ")
+        if cancelar.isnumeric():
+            if int(cancelar) == 1:
+                codigo = False
+                continue
+        else:
+            continue
+        quarto = str(input("Digite o tipo de quarto: ").strip().capitalize())   
+        quantidadeQuartosDesejados = int(input("Digite a quantidade de quartos: "))
+
+        if quantidadeQuartosDesejados <= 0:
+            print("--"*20)
+            print("Erro! Quatidade de quartos invalida !")
+            print("Digite uma quantidade valida !!")
+            print("--"*20)
+            continue
+
+        if quarto == tipos[0]:
+            if quantidadeQuartosDesejados > quartosLuxo:
+                print("--"*20)
+                print("Erro! Quatidade de quartos indisponivel !")
+                print("Digite uma quantidade valida !!")
+                print("--"*20)
+                continue
+            else:
+                quartosLuxo -= quantidadeQuartosDesejados
+                codigo = False
+            valor = int(250)
+            
+
+        elif quarto == tipos[1]:
+            if quantidadeQuartosDesejados > quartosStandard:
+                print("--"*20)
+                print("Erro! Quatidade de quartos indisponivel !")
+                print("Digite uma quantidade valida !!")
+                print("--"*20)
+                continue
+            else:
+                quartosStandard -= quantidadeQuartosDesejados
+                codigo = False
+            valor = int(100)
+
+
+        elif quarto == tipos[2]:
+            if quantidadeQuartosDesejados > quartosPremium:
+                print("--"*20)
+                print("Erro! Quatidade de quartos indisponivel !")
+                print("Digite uma quantidade valida !!")
+                print("--"*20)
+                continue
+            else:
+                quartosPremium -= quantidadeQuartosDesejados
+                codigo = False
+            valor = int(180)
+
+        else:
+            print("--"*20)
+            print("Erro! Digite um tipo de quarto valido !")
+            print("--"*20)
+            continue
+
+    if int(cancelar) == 1:
+        continue
+    # calculando o preço
+    valortotal = valor*diasReserva
+    valortotal = valortotal*quantidadeQuartosDesejados
+
+    print("--" * 20)
+    print(f"Responsavel pela reserva: {responsavel}")
+    print(f'Dia de check-in: {data_chekIn_str}')
+    print(f'Dia de check-out: {data_chekOut_str}')
+    print(f'Quantidade de darias: {diasReserva}')
+    print(f'O tipo de quarto: {quarto}')
+    print(f'Quantidade de quartos: {quantidadeQuartosDesejados}')
+    print(f'Valor total da reserva: R${valortotal}')
+    print("--" * 20)
+    reservas += 1
+    somaTotalValores += valortotal
+    valorMedio = somaTotalValores / reservas 
+    if valortotal > maisCara:
+        maisCara = valortotal
+        responsavelMaisCara = responsavel
+    if diasReserva > maiorReserva:
+        maiorReserva = diasReserva
+        responsavelMaiorReserva = responsavel
+
+print(f"=="*30)
+print(f"{'ESTATISTICAS GERAIS':^60}")
+print (f"Total de reservas: {reservas}")
+print(f"Soma total do valor das reservas: R${somaTotalValores :.2f}")
+print(f"Valor médio das reservas: R${valorMedio :.2f}")
+print(f"A reserva mais cara custou R${maisCara :.2f} e o responsavel por ela foi {responsavelMaisCara}")
+print (f"A reserva mais longa durou {maiorReserva} dias e o responsavel por ela foi {responsavelMaiorReserva}")
+
