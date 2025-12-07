@@ -46,7 +46,8 @@ def verificar_quantidade(estoque: dict):
     Args: 
         estoque (dict): dicionario de produtos e quantidades
     """
-    if produto := str(input("Digite o nome do produto que deseja verificar: ")) in estoque:
+    produto = str(input("Digite o nome do produto que deseja verificar: "))
+    if produto in estoque:
         print(f"A quantidade de {produto} no estoque é: {estoque[produto]}")
     else:
         print("Produto não encontrado no estoque.")
