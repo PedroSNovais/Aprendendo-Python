@@ -14,8 +14,17 @@ while True:
         from principal import adicionar_produto
         adicionar_produto(estoque)
         print("Produto adicionado com sucesso!")
-        print(estoque)
-
+    elif escolha == '2':   
+        from principal import atualizar_quantidade
+        atualizar_quantidade()
+        print("Quantidade atualizada com sucesso!")
+    elif escolha == '3':
+        from principal import remover_produto
+        remover_produto()
+        print("Produto removido com sucesso!")
+    elif escolha == '4':
+        from principal import verificar_quantidade
+        verificar_quantidade()
     elif escolha == '5':
         print("Saindo do programa...")
         break
