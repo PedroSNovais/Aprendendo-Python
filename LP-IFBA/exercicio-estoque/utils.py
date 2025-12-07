@@ -26,15 +26,3 @@ def validar_entrada_inteira(mensagem: str, maximo: int = None, minimo: int = Non
             return valor
         except ValueError:
             print("Erro! digite um número valido.")
-
-def receber_dados_produto() -> tuple[str, int]:
-    """
-    Recebe a nome e quantidade do produto
-
-    Returns:
-        nome (str): nome do produto
-        quantidade (int): quantidade do produto 
-    """
-    nome = input("Digite o nome do produto: ")
-    quantidade = validar_entrada_inteira("Digite a quantidade do produto: ")
-    return nome, quantidade
