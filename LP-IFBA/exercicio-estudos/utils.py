@@ -24,3 +24,24 @@ def receber_inteiro_valido(mensagem: str, maximo: int = None, minimo: int = None
         except ValueError:
             print("Erro: Por favor, insira um número inteiro válido.")
     
+def menu():
+    """
+    Exibe um menu de opções para o usuário e retorna a opção selecionada.
+
+    Returns:
+        int: A opção selecionada pelo usuário.
+    """
+
+    menu_str = '''
+    Opções do menu: 
+    1. Cadastrar nova tarefa
+    2. Listar tarefas
+    3. Atualizar status da tarefa
+    4. Remover tarefa
+    5. exibir resumo das tarefas
+    0. Sair
+    '''
+    print(menu_str)
+    
+    opcao = receber_inteiro_valido("Selecione uma opção (0-5): ", maximo=5, minimo=0)
+    return opcao
