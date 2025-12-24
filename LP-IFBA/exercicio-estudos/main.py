@@ -5,12 +5,14 @@ Permite ao usuário adicionar, visualizar, editar e excluir tarefas.
 Modulo principal do programa.
 """
 from utils import (receber_inteiro_valido, exibir_menu)
+from arquivo import salvar_tarefas, carregar_tarefas
 
 def executar_sistema():
     """
     Função principal do programa.
     Controla o fluxo do sistema de gerenciador de tarefas.
     """    
+    tareras = carregar_tarefas()
     
     while True:
             exibir_menu()
