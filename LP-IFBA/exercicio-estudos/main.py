@@ -1,8 +1,15 @@
+"""
+Sistema de gerenciador de tarefas simples (Sem POO).
+Permite ao usuário adicionar, visualizar, editar e excluir tarefas.
+
+Modulo principal do programa.
+"""
 from utils import menu
 
-def main():
+def executar_sistema():
     """
-    Função principal que executa o loop do menu até o usuário decidir sair.
+    Função principal do programa.
+    Controla o fluxo do sistema de gerenciador de tarefas.
     """    
     
     while True:
