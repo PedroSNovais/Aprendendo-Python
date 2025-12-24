@@ -42,3 +42,21 @@ def exibir_menu():
     0. Sair
     '''
     print(menu_str)
+
+def receber_informacoes_tarefa():
+    """
+    Solicita ao usuário que insira informações para criar uma nova tarefa. 
+    Returns:
+        dict: Um dicionário contendo as informações da tarefa.
+    """
+    titulo = str(input("Digite o título da tarefa: "))
+    descricao = str(input("Digite a descrição da tarefa: "))
+    data_de_realizacao_str = str(input("Digite a data de realização da tarefa (DD/MM/AAAA): "))
+    status = "pendente"
+    tarefa = {
+        "titulo": titulo,
+        "descricao": descricao,
+        "data_de_realizacao": data_de_realizacao_str,
+        "status": status
+    }
+    return tarefa
