@@ -60,3 +60,16 @@ def receber_informacoes_tarefa():
         "status": status
     }
     return tarefa
+
+def gerar_codigo_tarefa(tarefa: dict, lista_tarefas: list) -> str:
+    """
+    Gera um código único para a tarefa com base no timestamp atual.
+
+    Returns:
+        str: O código gerado para a tarefa.
+    """
+    codigo = hash(tarefa["titulo"] + tarefa["data_de_realizacao"])
+    if codigo in [t["codigo"] for t in lista_tarefas]:
+        print("AVISO: existe outra tarefa com o mesmo titulo e data de realização.")
+        codigo += 1  # Simples ajuste para evitar colisão
+    return codigo

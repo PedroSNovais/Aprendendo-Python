@@ -4,23 +4,25 @@ Permite ao usuário adicionar, visualizar, editar e excluir tarefas.
 
 Modulo principal do programa.
 """
-from utils import (receber_inteiro_valido, exibir_menu)
-from arquivo import salvar_tarefas, carregar_tarefas
+from utils import receber_inteiro_valido, exibir_menu
+from arquivo import carregar_tarefas
+from funcoes import criar_tarefa
 
 def executar_sistema():
     """
     Função principal do programa.
     Controla o fluxo do sistema de gerenciador de tarefas.
     """    
-    tareras = carregar_tarefas()
-    
+
     while True:
+            lista_tarefas = carregar_tarefas()
+            
             exibir_menu()
             opcao = receber_inteiro_valido("Selecione uma opção (0-5): ", maximo=5, minimo=0)
 
             if opcao == 1:
                 print("Opção 1 selecionada")
-                # Adicione aqui o código para a opção 1
+                criar_tarefa(lista_tarefas)
             elif opcao == 2:
                 print("Opção 2 selecionada")
                 # Adicione aqui o código para a opção 2
