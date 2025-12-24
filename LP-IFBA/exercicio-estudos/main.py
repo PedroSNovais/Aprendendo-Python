@@ -4,7 +4,7 @@ Permite ao usuário adicionar, visualizar, editar e excluir tarefas.
 
 Modulo principal do programa.
 """
-from utils import menu
+from utils import (receber_inteiro_valido, exibir_menu)
 
 def executar_sistema():
     """
@@ -13,28 +13,29 @@ def executar_sistema():
     """    
     
     while True:
-            resposta = menu()
+            exibir_menu()
+            opcao = receber_inteiro_valido("Selecione uma opção (0-5): ", maximo=5, minimo=0)
 
-            if resposta == 1:
+            if opcao == 1:
                 print("Opção 1 selecionada")
                 # Adicione aqui o código para a opção 1
-            elif resposta == 2:
+            elif opcao == 2:
                 print("Opção 2 selecionada")
                 # Adicione aqui o código para a opção 2
-            elif resposta == 3:
+            elif opcao == 3:
                 print("Opcão 3 selecionada")
                 # Adicione aqui o código para a opção 3
-            elif resposta == 4:
+            elif opcao == 4:
                 print("Opção 4 selecionada ")
                 # Adicione aqui o código para a opção 4
-            elif resposta == 5:
+            elif opcao == 5:
                  print("Opção 5 selecionada ")
                 # Adicione aqui o código para a opção 5
-            elif resposta == 0:
+            elif opcao == 0:
                 print("Saindo do programa...")
                 break
             else:
                 print("Opção inválida. Tente novamente.")
 
 if __name__ == "__main__":
-    main()
+    executar_sistema()
