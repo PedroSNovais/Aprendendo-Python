@@ -34,3 +34,21 @@ def atualizar_status_tarefa(codigo: str, lista_tarefas: list):
             return
     else:
         print("Tarefa não encontrada.")
+
+def remover_tarefa(codigo: str, lista_tarefas: list):
+    """
+    Remove uma tarefa específica da lista de tarefas.
+    
+    Parâmetros:
+    codigo (str): O código único da tarefa a ser removida.
+    lista_tarefas (list): A lista de tarefas onde a tarefa será removida.
+    """
+    for i, tarefa in enumerate(lista_tarefas):
+        if tarefa["codigo"] == codigo:
+            del lista_tarefas[i]
+            salvar_tarefas(lista_tarefas)
+            print("Tarefa removida com sucesso!")
+            return
+    else:
+        print("Tarefa não encontrada.")
+
