@@ -4,9 +4,10 @@ Permite ao usuário adicionar, visualizar, editar e excluir tarefas.
 
 Modulo principal do programa.
 """
-from utils import receber_inteiro_valido, exibir_menu
+from utils import receber_inteiro_valido
 from arquivo import carregar_tarefas
 from funcoes import criar_tarefa
+from interface import exibir_menu
 
 def executar_sistema():
     """

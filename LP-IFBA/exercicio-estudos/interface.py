@@ -17,3 +17,9 @@ def exibir_menu():
     '''
     print(menu_str)
 
+def limpar_terminal():
+    """
+    Limpa o terminal para melhorar a legibilidade.
+    """
+    import os
+    os.system('cls' if os.name == 'nt' else 'clear')

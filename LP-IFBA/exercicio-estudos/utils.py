@@ -54,3 +54,5 @@ def gerar_codigo_tarefa(tarefa: dict, lista_tarefas: list) -> str:
         print("AVISO: existe outra tarefa com o mesmo titulo e data de realização.")
         codigo += 1  # Simples ajuste para evitar colisão
     return codigo
+
+
