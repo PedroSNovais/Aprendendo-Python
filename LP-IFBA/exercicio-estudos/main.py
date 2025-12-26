@@ -6,7 +6,9 @@ Modulo principal do programa.
 """
 from utils import receber_inteiro_valido
 from arquivo import carregar_tarefas
-from funcoes import criar_tarefa, atualizar_status_tarefa
+from funcoes import (criar_tarefa, 
+                     atualizar_status_tarefa, 
+                     remover_tarefa)
 from interface import exibir_menu, listar_tarefas
 
 def executar_sistema():
@@ -35,7 +37,10 @@ def executar_sistema():
                 )
             elif opcao == 4:
                 print("Opção 4 selecionada ")
-                # Adicione aqui o código para a opção 4
+                remover_tarefa(
+                    receber_inteiro_valido("Digite o código da tarefa a ser removida: "), 
+                    lista_tarefas
+                )
             elif opcao == 5:
                  print("Opção 5 selecionada ")
                 # Adicione aqui o código para a opção 5
