@@ -24,29 +24,23 @@ def executar_sistema():
             opcao = receber_inteiro_valido("Selecione uma opção (0-5): ", maximo=5, minimo=0)
 
             if opcao == 1:
-                print("Opção 1 selecionada")
                 criar_tarefa(lista_tarefas)
             
             elif opcao == 2:
-                print("Opção 2 selecionada")
                 listar_tarefas(lista_tarefas)
             
             elif opcao == 3:
-                print("Opcão 3 selecionada")
                 atualizar_status_tarefa(
                     receber_inteiro_valido("Digite o código da tarefa a ser atualizada: "), 
                     lista_tarefas
                 )
             
-            elif opcao == 4:
-                print("Opção 4 selecionada ")
+            elif opcao == 4: 
                 remover_tarefa(
                     receber_inteiro_valido("Digite o código da tarefa a ser removida: "), 
                     lista_tarefas
                 )
-            
             elif opcao == 5:
-                print("Opção 5 selecionada ")
                 exibir_resumo(lista_tarefas)
             
             elif opcao == 0:
