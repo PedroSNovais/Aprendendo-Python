@@ -7,7 +7,7 @@ Modulo principal do programa.
 from utils import receber_inteiro_valido
 from arquivo import carregar_tarefas
 from funcoes import criar_tarefa
-from interface import exibir_menu
+from interface import exibir_menu, listar_tarefas
 
 def executar_sistema():
     """
@@ -26,7 +26,7 @@ def executar_sistema():
                 criar_tarefa(lista_tarefas)
             elif opcao == 2:
                 print("Opção 2 selecionada")
-                # Adicione aqui o código para a opção 2
+                listar_tarefas(lista_tarefas)
             elif opcao == 3:
                 print("Opcão 3 selecionada")
                 # Adicione aqui o código para a opção 3

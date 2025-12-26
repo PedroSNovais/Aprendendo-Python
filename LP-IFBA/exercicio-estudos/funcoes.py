@@ -16,3 +16,21 @@ def criar_tarefa(lista_tarefas: list):
 
     except ValueError as e:
         print(f"Erro ao criar tarefa: {e}")
+
+def atualizar_status_tarefa(codigo: str, lista_tarefas: list):
+    """
+    Atualiza o status de uma tarefa específica na lista de tarefas.
+    
+    Parâmetros:
+    codigo (str): O código único da tarefa a ser atualizada.
+    lista_tarefas (list): A lista de tarefas onde a tarefa será atualizada."""
+    
+    for tarefa in lista_tarefas:
+        if tarefa["codigo"] == codigo:
+            tarefa["concluida"] = True if not tarefa["concluida"] else False
+            tarefa["status"] = "concluida" if not tarefa["status"] == "concluida" else "pendente"
+            salvar_tarefas(lista_tarefas)
+            print("Status da tarefa atualizado com sucesso!")
+            return
+    else:
+        print("Tarefa não encontrada.")
