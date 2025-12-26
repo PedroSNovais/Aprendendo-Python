@@ -31,6 +31,7 @@ def listar_tarefas(tarefas):
     Parâmetros:
     tarefas (list): Lista de dicionários representando as tarefas.
     """
+    limpar_terminal()
     if not tarefas:
         print("Nenhuma tarefa cadastrada.")
         return
@@ -46,6 +47,8 @@ def exibir_resumo(tarefas):
     Parâmetros:
     tarefas (list): Lista de dicionários representando as tarefas.
     """
+
+    limpar_terminal()
     total = len(tarefas)
     concluidas = sum(1 for tarefa in tarefas if tarefa['concluida'])
     pendentes = total - concluidas

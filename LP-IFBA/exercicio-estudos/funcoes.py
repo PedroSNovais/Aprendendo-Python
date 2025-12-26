@@ -4,9 +4,10 @@ Este módulo contém funções para criar, listar, atualizar e remover tarefas,
 """
 from utils import receber_informacoes_tarefa, gerar_codigo_tarefa
 from arquivo import salvar_tarefas
-
+from interface import limpar_terminal
 def criar_tarefa(lista_tarefas: list):
     try:
+        limpar_terminal()
         tarefa = receber_informacoes_tarefa()
         tarefa["codigo"] = gerar_codigo_tarefa(tarefa, lista_tarefas)
         lista_tarefas.append(tarefa)
@@ -24,7 +25,7 @@ def atualizar_status_tarefa(codigo: str, lista_tarefas: list):
     Parâmetros:
     codigo (str): O código único da tarefa a ser atualizada.
     lista_tarefas (list): A lista de tarefas onde a tarefa será atualizada."""
-    
+    limpar_terminal()
     for tarefa in lista_tarefas:
         if tarefa["codigo"] == codigo:
             tarefa["concluida"] = True if not tarefa["concluida"] else False
@@ -43,6 +44,7 @@ def remover_tarefa(codigo: str, lista_tarefas: list):
     codigo (str): O código único da tarefa a ser removida.
     lista_tarefas (list): A lista de tarefas onde a tarefa será removida.
     """
+    limpar_terminal()
     for i, tarefa in enumerate(lista_tarefas):
         if tarefa["codigo"] == codigo:
             del lista_tarefas[i]
