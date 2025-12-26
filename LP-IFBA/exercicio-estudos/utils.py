@@ -33,6 +33,7 @@ def receber_informacoes_tarefa():
     titulo = str(input("Digite o título da tarefa: "))
     descricao = str(input("Digite a descrição da tarefa: "))
     data_de_realizacao_str = str(input("Digite a data de realização da tarefa (DD/MM/AAAA): "))
+    concluida = False
     status = "pendente"
     tarefa = {
         "titulo": titulo,

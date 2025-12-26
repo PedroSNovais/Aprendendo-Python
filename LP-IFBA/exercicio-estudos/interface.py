@@ -23,3 +23,19 @@ def limpar_terminal():
     """
     import os
     os.system('cls' if os.name == 'nt' else 'clear')
+
+def listar_tarefas(tarefas):
+    """
+    Exibe a lista de tarefas no terminal.
+    
+    Parâmetros:
+    tarefas (list): Lista de dicionários representando as tarefas.
+    """
+    if not tarefas:
+        print("Nenhuma tarefa cadastrada.")
+        return
+    
+    for tarefa in tarefas:
+        status = "Concluída" if tarefa['concluida'] else "Pendente"
+        print(f"ID: {tarefa['id']} | Descrição: {tarefa['descricao']} | Status: {status}")
+
