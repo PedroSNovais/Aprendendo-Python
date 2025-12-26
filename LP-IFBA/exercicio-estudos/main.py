@@ -9,7 +9,7 @@ from arquivo import carregar_tarefas
 from funcoes import (criar_tarefa, 
                      atualizar_status_tarefa, 
                      remover_tarefa)
-from interface import exibir_menu, listar_tarefas
+from interface import exibir_menu, listar_tarefas, exibir_resumo
 
 def executar_sistema():
     """
