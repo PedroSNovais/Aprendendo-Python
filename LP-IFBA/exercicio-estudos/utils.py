@@ -39,6 +39,7 @@ def receber_informacoes_tarefa():
         "titulo": titulo,
         "descricao": descricao,
         "data_de_realizacao": data_de_realizacao_str,
+        "concluida": concluida,
         "status": status
     }
     return tarefa
