@@ -39,3 +39,18 @@ def listar_tarefas(tarefas):
         status = "Concluída" if tarefa['concluida'] else "Pendente"
         print(f"ID: {tarefa['id']} | Descrição: {tarefa['descricao']} | Status: {status}")
 
+def exibir_resumo(tarefas):
+    """
+    Exibe um resumo das tarefas, incluindo totais e status.
+    
+    Parâmetros:
+    tarefas (list): Lista de dicionários representando as tarefas.
+    """
+    total = len(tarefas)
+    concluidas = sum(1 for tarefa in tarefas if tarefa['concluida'])
+    pendentes = total - concluidas
+    
+    print(f"Resumo das Tarefas:")
+    print(f"Total de Tarefas: {total}")
+    print(f"Tarefas Concluídas: {concluidas}")
+    print(f"Tarefas Pendentes: {pendentes}")
