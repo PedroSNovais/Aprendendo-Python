@@ -37,7 +37,7 @@ def listar_tarefas(tarefas):
     
     for tarefa in tarefas:
         status = "Concluída" if tarefa['concluida'] else "Pendente"
-        print(f"ID: {tarefa['id']} | Descrição: {tarefa['descricao']} | Status: {status}")
+        print(f"ID: {tarefa['codigo']} | Descrição: {tarefa['descricao']} | Status: {status}")
 
 def exibir_resumo(tarefas):
     """
