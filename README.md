@@ -28,11 +28,15 @@ Esse repositório também conta com:
 ## 📁 Estrutura do Repositório
 
 📦 curso-em-video → Exercícios e códigos do Curso em Vídeo
+
 📦 entendendo-algoritimos → Estudos e exercícios sobre algoritmos
+
 📦 lp-ifba →  Alguns exercícios da disciplina de lógica/programação
+
 📦 obi → Problemas de preparação para Olimpíada Brasileira de Informática
 
 LICENSE → Licença MIT
+
 README.md → Este arquivo
 
 ---
