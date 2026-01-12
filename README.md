@@ -1,18 +1,39 @@
 # 🐍 Aprendendo Python
 
-Material de estudos em Python desenvolvido por mim enquanto eu fazia o curso **Python 3** do **[Curso em Vídeo](https://www.cursoemvideo.com/)** (Gustavo Guanabara) no YouTube/plataforma.  
-Aqui você encontrará minhas anotações, scripts e resoluções dos exercícios.
+Este repositório contém **material de estudo em Python** produzido por mim enquanto seguia a jornada de me aperfeiçoar na linguagem.
+
+Aqui você encontrará minhas **anotações, scripts e resoluções de exercícios** desenvolvidos ao longo do aprendizado.
 
 ---
 
-## 📌 Exercícios por Mundo
+## 📚 O que tem aqui
 
-Durante o curso, foram propostos **115 exercícios** (mais os subitens do exercício 115).  
-Aqui está a divisão dos exercícios resolvidos por cada Mundo, com os links oficiais das playlists:
+O conteúdo é organizado conforme os temas e exercícios que fui estudando, incluindo:
 
-- **[Mundo 1 (Exercícios 1–35)](https://www.youtube.com/playlist?list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1)**  
-- **[Mundo 2 (Exercícios 36–71)](https://www.youtube.com/playlist?list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye)**  
-- **[Mundo 3 (Exercícios 72–115)](https://www.youtube.com/playlist?list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6)**  
+- Fundamentos de Python (tipos, operações, `print` e entrada de dados) 
+- Estruturas de controle (`if`, `for`, `while`)
+- Estruturas compostas (listas, tuplas, dicionários) 
+- Funções e módulos 
+
+Esses fundamentos seguem a **progressão dos três mundos do curso de Python do [Curso em Vídeo](https://www.cursoemvideo.com)**.
+
+Esse repositório também conta com:
+
+- Tratamento de erros e exeções
+- Estudos de Programação Orientada a Objetos
+- Desafios e resoluções de exercícios práticos
+
+---
+
+## 📁 Estrutura do Repositório
+
+📦 curso-em-video → Exercícios e códigos do Curso em Vídeo
+📦 entendendo-algoritimos → Estudos e exercícios sobre algoritmos
+📦 lp-ifba →  Alguns exercícios da disciplina de lógica/programação
+📦 obi → Problemas de preparação para Olimpíada Brasileira de Informática
+
+LICENSE → Licença MIT
+README.md → Este arquivo
 
 ---
 
@@ -22,25 +43,9 @@ Aqui está a divisão dos exercícios resolvidos por cada Mundo, com os links of
 
 ---
 
-## 📚 Sobre o conteúdo
-
-O repositório contém:
-
-- **Fundamentos do Python:** tipos primitivos, operadores, strings.  
-- **Estruturas de controle:** condicionais, laços `for` e `while`.  
-- **Estruturas compostas:** listas, tuplas e dicionários.  
-- **Funções e módulos.**  
-- **Tratamento de erros.**  
-- **Pequenos projetos e desafios práticos.**
-
-Todo o conteúdo segue a progressão dos três mundos do curso.
-
----
-
 ## 🙌 Agradecimentos
 
-Um agradecimento especial ao professor **Gustavo Guanabara** e ao projeto **Curso em Vídeo**, que tornam o aprendizado de programação acessível e de qualidade.
-
+Um agradecimento especial ao professor **Gustavo Guanabara** e ao projeto ** [Curso em Vídeo](https://www.cursoemvideo.com)**, que tornam o aprendizado de programação acessível e de qualidade.
 
 ---
 
@@ -48,7 +53,6 @@ Um agradecimento especial ao professor **Gustavo Guanabara** e ao projeto **Curs
 
 Este repositório está sob a licença **MIT**.
 Você pode usar e adaptar o conteúdo livremente, desde que dê os devidos créditos.
-
 
 ---
 
