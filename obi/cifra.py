@@ -15,6 +15,10 @@ for letra in p:
     if letra in vogais:
         nova_p += letra
     else:
+        menor_dist = 90
+        vogal_proxima = 'z'
+        dist_vogais = []
+        
         nova_p += letra
         idx_consoante = alfa.index(letra)
 
