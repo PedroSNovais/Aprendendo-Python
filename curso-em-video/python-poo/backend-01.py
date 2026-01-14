@@ -1,3 +1,10 @@
+''' 
+Produzi os arquivos com esse nome a partir do estudo do material do Curso: desenvolvimento back end com python do 
+projeto: Capacitação 4 - Conecta e Capacita 
+Bolsa Futuro Digital - IFBA PS
+Instrutora: Ana Cristina O Linhares
+ '''
+
 # Criando a classe 
 class Pessoa:
    
@@ -7,7 +14,7 @@ class Pessoa:
     def __init__(self, nome, idade):
         self.nome = nome.upper()
         self.idade = idade
-   
+
     def apresentar(self):
         print(f'O nome da pessoa é {self.nome} e ela tem {self.idade} anos de idade')
    
@@ -56,4 +63,3 @@ print("_________________________")
 
 p1.comparar_idades(p2)
 
-# Manipulando os Objetos
