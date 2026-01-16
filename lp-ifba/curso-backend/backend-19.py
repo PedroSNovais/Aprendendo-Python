@@ -31,14 +31,44 @@ class Animal: # Criando a classe
             NOME: {self.nome}
             ESPÉCIE: {self.especie}
             IDADE: {self.idade}
+            PESO: {self.get_peso()}
         ___________________________
                 """)
         
 
+
+
+# Criando subclasse cachorro
+class Cachorro(Animal):
+    # adicionando coisas ao método construtor
+    def __init__(self, nome, especie, idade, peso):
+        super().__init__(nome, especie, idade, peso)
+        self.especie = "Cachorro"
+
+    # sobreescrevendo um metodo da classe mãe
+    def emitir_som(self):
+        print(f'O Cachorro {self.nome} diz: AU AU !!')
+
+
+
+
+
+# Criando classe filha Gato
+class Gato(Animal):
+    # Adicionando coisas a um método ja existente na classe mãe
+    def __init__(self, nome, especie, idade, peso):
+        super().__init__(nome, especie, idade, peso)
+        self.especie = "Gato"
+
+    # Sobreescreve um método da clase mãe para funcionar completamente diferente
+    def emitir_som(self):
+        print(f'O gatinho {self.nome} diz: MIAU MIAU !! ')
+
+
 # instanciando
-animal1 = Animal("chico", "gato", 1)
-animal2 = Animal("badaró", "sapo", 2 )
-animal3 = Animal("dolle", "capivara", 5)
+animal1 = Gato("chico", "gato", 1, 8)
+animal2 = Animal("badaró", "sapo", 2, 0.4)
+animal3 = Animal("dolle", "capivara", 5, 10.2)
 
 #executando métodos
 animal1.emitir_som()
