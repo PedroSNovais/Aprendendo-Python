@@ -16,6 +16,10 @@ class Animal: # Criando a classe
         else:
             self.__peso = novo_peso
 
+    def alimentar(self, quantidade):
+        self.set_peso(self.get_peso() + (quantidade * 0.2))
+        print(f"O {self.nome} foi alimentado")
+    
     def emitir_som(self,):
         print(f"{self.nome} está emitindo som...")
     
