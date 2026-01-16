@@ -11,8 +11,8 @@ class Animal: # Criando a classe
         return self.__peso
     
     def set_peso(self, novo_peso):
-        if self.__peso <= 0:
-            print("impossivel atribuir peso negativo")
+        if novo_peso <= 0:
+            print(f"impossivel atribuir peso negativo ao {self.nome}")
         else:
             self.__peso = novo_peso
 
@@ -67,12 +67,22 @@ class Gato(Animal):
 
 # instanciando
 animal1 = Gato("chico", "gato", 1, 8)
-animal2 = Animal("badaró", "sapo", 2, 0.4)
+animal2 = Animal("badaró", "sapo", 2, 0.2)
 animal3 = Animal("dolle", "capivara", 5, 10.2)
+animal4 = Cachorro("ZEZE", "Cachorro", 1, 6.2)
+animal5 = Gato("Tom", 'gato', 6, 2.5)
 
 #executando métodos
-animal1.emitir_som()
-animal3.emitir_som()
+
 animal1.apresentar()
 animal2.apresentar()
 animal3.apresentar()
+animal4.apresentar()
+animal5.apresentar()
+
+animal1.emitir_som()
+animal3.emitir_som()
+animal4.emitir_som()
+
+animal2.alimentar((-30))
+
