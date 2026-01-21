@@ -58,6 +58,16 @@ class Veiculo:
             Ano: {self.ano}
             Velocidade Atual: {self.velocidade}Km/h
                 """) 
+    def parar(self):
+        self.velocidade = 0
+
+    def tempo_uso(self):
+        from datetime import date
+        ano_atual = date.today().year
+        print(f"Esse veiculo tem {ano_atual - self.ano} anos de uso")
+
+    def falar(self):
+        print("vrum, vrum !!")   
             
 # instanciando objeto
 v1 = Veiculo("fiat", "fusca", 1994)
