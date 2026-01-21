@@ -69,9 +69,4 @@ class Veiculo:
     def falar(self):
         print("vrum, vrum !!")   
             
-# instanciando objeto
-v1 = Veiculo("fiat", "fusca", 1994)
-v1.acelerar()
-v1.acelerar()
-v1.frear()
-v1.exibir_dados()
+
