@@ -4,7 +4,7 @@ class Veiculo:
         self.__velocidade = 0
         self.__marca = marca
         self.__modelo = modelo
-        self.__ano = ano
+        self.ano = ano
 
 # gatters e setters
 
@@ -29,16 +29,20 @@ class Veiculo:
         return self.__velocidade
     @velocidade.setter
     def velocidade(self, nova_velocidade):
-        if nova_velocidade >= 0:
+        if nova_velocidade >= 0 and nova_velocidade <= 200:
             self.__velocidade = nova_velocidade
         else: 
-            print("Não é possivel atribuir um valor negativo a essa variavel !!")
+            print("Não é possivel atribuir esse valor para velocidade !!")
     @property
     def ano(self):
         return self.__ano
     @ano.setter
     def ano(self, novo_ano):
-        self.__ano = novo_ano
+        if novo_ano >= 1900:
+            self.__ano = novo_ano
+        else:
+            print("não é possivel cadastrar um carro com esse ano de fab")
+            self.ano = 1900
 
 # métodos normais
 
@@ -56,8 +60,7 @@ class Veiculo:
             Marca: {self.marca}
             Modelo: {self.modelo}
             Ano: {self.ano}
-            Velocidade Atual: {self.velocidade}Km/h
-                """) 
+            Velocidade Atual: {self.velocidade}Km/h""") 
     def parar(self):
         self.velocidade = 0
 
