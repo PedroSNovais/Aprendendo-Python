@@ -1,7 +1,8 @@
 from classeex001 import Veiculo
+
 class Carro(Veiculo):
-    def __init__(self, marca, modelo, ano, portas, capacidade_carga):
-        super().__init__(marca, modelo, ano)
+    def __init__(self, marca, modelo, ano, portas, capacidade_carga, potencia = 1.0, tipo = "gasolina"):
+        super().__init__(marca, modelo, ano, potencia, tipo)
         self.__portas = portas
         self.__capacidade_carga = capacidade_carga
     
@@ -16,8 +17,8 @@ class Carro(Veiculo):
             Capacidade de carga: {self.__capacidade_carga}""")
 
 class Moto(Veiculo):
-    def __init__(self, marca, modelo, ano, portas, capacidade_carga):
-        super().__init__(marca, modelo, ano)
+    def __init__(self, marca, modelo, ano, portas, capacidade_carga, potencia=1.0, tipo="gasolina"):
+        super().__init__(marca, modelo, ano, potencia, tipo)
         self.__portas = portas
         self.__capacidade_carga = capacidade_carga
 
@@ -32,8 +33,8 @@ class Moto(Veiculo):
             Capacidade de carga: {self.__capacidade_carga}""")
 
 class Caminhao(Veiculo):
-    def __init__(self, marca, modelo, ano, portas, capacidade_carga):
-        super().__init__(marca, modelo, ano)
+    def __init__(self, marca, modelo, ano, portas, capacidade_carga, potencia=1.0, tipo="gasolina"):
+        super().__init__(marca, modelo, ano, potencia, tipo)
         self.__portas = portas
         self.__capacidade_carga = capacidade_carga
     

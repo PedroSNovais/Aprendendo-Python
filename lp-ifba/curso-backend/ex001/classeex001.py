@@ -1,10 +1,11 @@
 # criando a class
 class Veiculo:
-    def __init__(self, marca, modelo, ano):
+    def __init__(self, marca, modelo, ano, potencia, tipo):
         self.__velocidade = 0
         self.__marca = marca
         self.__modelo = modelo
         self.ano = ano
+        self.motor = Motor(potencia, tipo)
 
 # gatters e setters
 
@@ -47,7 +48,7 @@ class Veiculo:
 # métodos normais
 
     def acelerar(self):
-        self.velocidade += 10
+        self.velocidade += self.motor.potencia * 10
 
     def frear(self):
         if self.velocidade > 0:
@@ -60,7 +61,11 @@ class Veiculo:
             Marca: {self.marca}
             Modelo: {self.modelo}
             Ano: {self.ano}
-            Velocidade Atual: {self.velocidade}Km/h""") 
+            Velocidade Atual: {self.velocidade}Km/h
+            
+            Motor_Tipo: {self.motor.tipo}
+            Motor_Potencia: {self.motor.potencia}""") 
+            
     def parar(self):
         self.velocidade = 0
 
@@ -73,3 +78,25 @@ class Veiculo:
         print("vrum, vrum !!")   
             
 
+# criando classe Motor
+class Motor:
+    def __init__(self, potencia = 1.0, tipo = "Gasolina"):
+        self.__potencia = potencia
+        self.__tipo = tipo
+
+    @property
+    def potencia(self):
+        return self.__potencia
+    @potencia.setter
+    def potencia(self, nova_potencia):
+        if nova_potencia >= self.__potencia:
+            self.potencia = nova_potencia
+        else:
+            print("Não é possivel definir essa potencia para o motor")
+    
+    @property
+    def tipo(self):
+        return self.__tipo
+    @tipo.setter
+    def tipo(self, novo_tipo):
+        self.tipo = novo_tipo
